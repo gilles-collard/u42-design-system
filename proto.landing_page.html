@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.dataset.theme = "dark";
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner pw_2">
+        <a href="/" class="header__logo">
+          <img src="assets/svg/u42.svg" alt="logo u42" width="40" height="40" />
+        </a>
+        <nav class="nav" aria-label="Navigation principale">
+          <a href="#outils" class="btn btn--subtle" data-i18n="nav.products"></a
+          ><a href="#about" class="btn btn--subtle" data-i18n="nav.about"></a>
+        </nav>
+        <div class="header__actions">
+          <a class="btn btn--neutral" href="/login" data-i18n="nav.login"></a
+          ><a class="btn btn--primary" href="/login" data-i18n="nav.signup"></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- hero -->
+      <section class="full_screen pw_1" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="hero" data-i18n="hero.title"></h1>
+        <p class="h2 secondary" data-i18n="hero.subtitle"></p>
+        <div class="actions">
+          <a class="btn btn--primary btn--md" href="/login" data-i18n="hero.cta"></a>
+        </div>
+      </section>
+
+      <!-- value -->
+      <section class="full_screen pw_1" aria-labelledby="tools-title">
+        <span class="section__label" data-i18n="value.label"></span>
+        <h2 id="value-title" class="h2">
+          <span data-i18n="value.title"></span>
+          <span class="color_mint" data-i18n="value.title_highlight"></span>
+        </h2>
+        <p class="section__body medium" data-i18n="value.body"></p>
+        <div class="meta_data" data-i18n-meta="value.meta"></div>
+      </section>
+
+      <!-- tools -->
+      <section class="full_screen pw_1" id="outils" aria-labelledby="outils-title">
+        <p class="section__label" data-i18n="tools.label"></p>
+        <h2 id="outils-title" class="section__title" data-i18n="tools.title"></h2>
+        <div class="table" role="table" data-i18n-table="tools.items"></div>
+      </section>
+
+      <!-- impact -->
+      <section class="full_screen pw_1" id="about" aria-labelledby="impact-title">
+        <h2 id="impact-title" class="section__title" data-i18n-html="impact.title"></h2>
+      </section>
+
+      <!-- cta -->
+      <section class="full_screen pw_1 cta" aria-labelledby="cta-title">
+        <h2 id="cta-title" class="cta__title" data-i18n="cta.title"></h2>
+        <p class="cta__subtitle" data-i18n-html="cta.subtitle"></p>
+        <a class="btn btn--primary btn--lg" href="/login" data-i18n="cta.button"></a>
+        <p class="cta__note" data-i18n="cta.note"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <a href="/" class="footer__logo" data-i18n="footer.logo"></a>
+        <p class="footer__tagline" data-i18n="footer.tagline"></p>
+      </div>
+    </footer>
+
+    <script type="module" src="./proto.landing_page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "tokens" as *;
+
+$mobile: map.get($breakpoints, "mobile");
+$tablet: map.get($breakpoints, "tablet");
+$desktop: map.get($breakpoints, "desktop");
+$wide: map.get($breakpoints, "wide");
+$ultra_wide: map.get($breakpoints, "ultra_wide");
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: ($mobile + 1px)) and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: ( $tablet + 1px)) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media screen and (min-width: ($desktop + 1px)) and (max-width: $wide) {
+    @content;
+  }
+}
+
+@mixin ultrawide {
+  @media screen and (min-width: ($wide + 1px)) {
+    @content;
+  }
+}

@@ -1,0 +1,70 @@
+@use "sass:map";
+@use "sass:color";
+
+@use "responsive" as *;
+@use "tokens" as *;
+
+.btn {
+  width: fit-content;
+  height: 48px;
+  // min-width: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2em;
+  line-height: 1;
+  font-size: var(--smallest);
+  font-family: "Suisse Intl Light";
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  color: var(--w900);
+  background-color: var(--w50);
+  border-radius: 2.8rem;
+  border: none;
+
+  -webkit-user-select: none;
+  user-select: none;
+
+  &:hover {
+    transition: var(--transition);
+    // button used in cards
+    // lighter than background
+    // darker:hover
+    background-color: var(--b400);
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  // Optionnel: style custom cohérent
+  // &:focus-visible {
+  // box-shadow: 0 0 0 3px hsla(0, 0%, 100%, 0.3);
+  // }
+
+  // TODO generaliser
+  @each $name, $color in $colors {
+    &--#{$name}:hover {
+      background-color: var(--w200);
+    }
+  }
+  @each $name, $color in $colors {
+    &--#{$name}.active {
+      background-color: #{$color};
+    }
+  }
+}
+
+@include mobile {
+  .btn {
+    min-width: 100px;
+    height: 48px;
+    padding: 1rem 1.6rem;
+  }
+
+  .btn,
+  .btn_cta {
+    width: 100%;
+  }
+}

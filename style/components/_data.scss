@@ -1,0 +1,32 @@
+.meta_data {
+  margin-top: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-color);
+}
+
+.meta_data__item {
+  gap: var(--space-05);
+  font-family: var(--font-base);
+  font-size: var(--smaller);
+  color: var(--gray-180);
+  .key {
+    font-family: var(--family-mono);
+    font-size: var(--smallest);
+    color: var(--color-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .value {
+    font-size: var(--smaller);
+    color: var(--text);
+  }
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .hero-meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

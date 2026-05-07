@@ -1,0 +1,28 @@
+.pattern_dotted {
+  --dot-bg: black;
+  --dot-color: rgba(255 255 255 / 0.38);
+  --dot-size: 1px;
+  --dot-space: 61px;
+  background:
+    linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+}
+
+.squared {
+  $c: hsla(0, 0%, 100%, 0.06);
+
+  background-image:
+    linear-gradient($c 1px, transparent 1px),
+    linear-gradient(90deg, $c 1px, transparent 1px);
+  background-size: 62px 62px;
+}

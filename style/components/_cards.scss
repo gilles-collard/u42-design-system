@@ -1,0 +1,42 @@
+@use "tokens" as *;
+@use "responsive" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  transition: var(--transition_quick);
+  contain: layout;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
+}
+.card_header {
+  display: flex;
+}
+
+.card_body {
+  flex: 1;
+}
+
+/* BACKGROUND COLOR */
+@each $name, $value in $colors {
+  .card--hover_#{$name} {
+    .card_label {
+      background-color: var(--negative);
+      color: currentColor;
+    }
+    &:hover {
+      color: var(--negative);
+      background-color: $value;
+
+      .card_label {
+        background-color: var(--negative);
+      }
+    }
+  }
+}
+
+.card_hover--darker:hover {
+  color: var(--negative);
+  background-color: var(--b550);
+}

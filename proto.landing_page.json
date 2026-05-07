@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "products": "Products",
+    "about": "About",
+    "login": "Se connecter",
+    "signup": "S'inscrire"
+  },
+  "hero": {
+    "title": "The answers lie with the users.",
+    "subtitle": "Exploitez leurs réponses, avancez dans la clarté.",
+    "cta": "Trouver des réponses →"
+  },
+  "value": {
+    "label": "Outils UX, ouverts et pédagogiques",
+    "title": "Transformer la recherche utilisateur en",
+    "title_highlight": "système de décision continu",
+    "body": "Continuous Discovery + AI + Product thinking",
+    "meta": [
+      { "key": "Modules", "value": "5 outils" },
+      { "key": "Statut", "value": "2 disponibles · 1 bêta" },
+      { "key": "Licence", "value": "Libre · pédagogique" },
+      { "key": "Données", "value": "Exportables · sans tracker" }
+    ]
+  },
+  "tools": {
+    "label": "Outils",
+    "title": "Chaque outil répond à une question.",
+    "items": [
+      {
+        "index": "T01",
+        "name": "Projects",
+        "role": "Structurer votre démarche",
+        "desc": "Regroupez vos travaux, vos tests et vos participants.",
+        "uri": "projects.u42.space",
+        "status": "Live"
+      },
+      {
+        "index": "T02",
+        "name": "Card Sorting",
+        "role": "Comprendre l'organisation perçue",
+        "desc": "Observez comment les utilisateurs catégorisent vos contenus.",
+        "uri": "card_sorting.u42.space",
+        "status": "Live"
+      },
+      {
+        "index": "T03",
+        "name": "Mindmap",
+        "role": "Clarifiez une idée en quelques minutes",
+        "desc": "Cartographiez vos hypothèses, vos pistes et leurs relations.",
+        "uri": "mindmap.u42.space",
+        "status": "Live"
+      },
+      {
+        "index": "T04",
+        "name": "Mental Model",
+        "role": "Comprenez comment vos utilisateurs pensent",
+        "desc": "Transformez vos entretiens en modèle structuré.",
+        "uri": "mental_model.u42.space",
+        "status": "Soon"
+      },
+      {
+        "index": "T05",
+        "name": "Interview",
+        "role": "Posez les bonnes questions, sans biais",
+        "desc": "Créez des guides d'entretien fiables, sans biais.",
+        "uri": "interview.u42.space",
+        "status": "Soon"
+      }
+    ]
+  },
+  "impact": {
+    "title": "Moins de débats. Plus de décisions.\nMoins d'intuition. Plus de preuves."
+  },
+  "cta": {
+    "title": "Prenez une décision aujourd'hui.",
+    "subtitle": "Pas besoin d'expertise.\nPas besoin de setup complexe.",
+    "button": "Créer un compte gratuit",
+    "note": "Gratuit. Sans carte de crédit."
+  },
+  "footer": {
+    "logo": "u42",
+    "tagline": "The answers lie with the users."
+  }
+}

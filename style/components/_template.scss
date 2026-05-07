@@ -1,0 +1,186 @@
+@mixin flex-fullscreen($direction: row, $justify: center, $align: center) {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  // align-items: $align;
+}
+
+// Source: Paul Irish (2012) "Box Sizing Border Box FTW"
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  padding: 3rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+// debug
+// * {
+//   outline: 1px solid red; // Voir quel élément déborde
+// }
+
+/* FULL SCREEN */
+.full_h {
+  min-height: 100svh;
+}
+
+.full_w {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.full_screen {
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+  @include flex-fullscreen(column, center, center);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse 60% 50% at 85% 20%,
+        rgba(211, 229, 255, 0.06),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 40% 60% at 15% 80%,
+        rgba(200, 214, 205, 0.04),
+        transparent 60%
+      );
+    pointer-events: none;
+  }
+}
+
+.section__label {
+  &::before {
+    content: "";
+    height: 1px;
+    width: var(--space-1);
+    margin-right: var(--space-1);
+    background: var(--border-color);
+  }
+}
+
+.section__label,
+.label {
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "JetBrains Mono Regular", monospace;
+  font-size: var(--nano);
+  color: var(--color-faint);
+}
+
+// ========
+// FLEXBOX
+// ========
+
+.centered {
+  align-items: center;
+  text-align: center;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+.center_x {
+  display: flex;
+  justify-content: center;
+}
+
+.center_y {
+  display: flex;
+  align-items: center;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.end {
+  justify-content: end;
+  align-items: end;
+  height: 100%;
+}
+
+.bottom {
+  align-items: end;
+  justify-content: end;
+}
+
+.overflow_hidden {
+  overflow: hidden;
+}
+
+.inactive {
+  opacity: 0.69;
+}
+
+/* VISIBILITY */
+
+// .hidden_desktop {
+//   @include desktop {
+//     display: none;
+//   }
+// }
+
+// .hidden_tablet {
+//   @include tablet {
+//     display: none;
+//   }
+// }
+
+// .hidden_mobile {
+//   @include mobile {
+//     display: none;
+//   }
+// }
+
+// .displayed_desktop {
+//   // display: none;
+//   @include desktop {
+//     display: block;
+//   }
+// }
+
+// .displayed_tablet {
+//   // display: none;
+//   @include tablet {
+//     display: block;
+//   }
+// }
+
+// .displayed_mobile {
+//   // display: none;
+//   @include mobile {
+//     display: block;
+//   }
+// }

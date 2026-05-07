@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\Gilles\\\\Documents\\\\_sites\\\\u42.space\\\\u42.space.design_system\\\\style\" -Filter \"*.scss\")",
+      "Bash(Select-Object Name)",
+      "Bash(Sort-Object)"
+    ]
+  }
+}

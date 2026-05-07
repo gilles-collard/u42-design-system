@@ -1,0 +1,394 @@
+@use "sass:map";
+
+// ============================================================================
+// DESIGN TOKENS - PRIMITIVES & SEMANTIC
+// ============================================================================
+// Organization: Motion → Space → Size → Font → Border → Radius → Shadow →
+//               Gradient → Z-index → Icons → Colors
+// Philosophy: DRY, scalable, maintainable
+// Naming: underscore_case for consistency
+// ============================================================================
+
+:root {
+  --root-font-size: 16px; /* Base font size for rem calculations */
+  // ==========================================================================
+  // 1. MOTION & TIME
+  // ==========================================================================
+
+  // Durations (Fibonacci-inspired)
+  --duration_instant: 174ms;
+  --duration_quick: 285ms;
+  --duration_normal: 396ms;
+  --duration_slow: 582ms;
+
+  // Respect user preferences
+  @media (prefers-reduced-motion: reduce) {
+    --duration_instant: 0ms;
+    --duration_quick: 0ms;
+    --duration_normal: 0ms;
+    --duration_slow: 0ms;
+  }
+
+  // Easing functions (Material Design)
+  --ease_standard: cubic-bezier(0.4, 0, 0.2, 1); // Balanced
+  --ease_decelerate: cubic-bezier(0, 0, 0.2, 1); // Exit
+  --ease_accelerate: cubic-bezier(0.4, 0, 1, 1); // Enter
+  --ease_sharp: cubic-bezier(0.4, 0, 0.6, 1); // Emphasis
+
+  // Legacy alias (backward compatibility)
+  --transition_timing_function: var(--ease_sharp);
+
+  // Precomposed transitions
+  --transition_instant: all var(--duration_instant) var(--ease_standard);
+  --transition_quick: all var(--duration_quick) var(--ease_standard);
+  --transition_normal: all var(--duration_normal) var(--ease_standard);
+  --transition_slow: all var(--duration_slow) var(--ease_standard);
+  --transition: var(--transition_normal);
+
+  // ==========================================================================
+  // 2. SPACE (8px base unit)
+  // ==========================================================================
+
+  --space_xs: 0.5rem; // 8px
+  --space_sm: 1rem; // 16px
+  --space_md: 2rem; // 32px
+  --space_lg: 3rem; // 48px
+  --space_xl: 5rem; // 80px
+  --space_xxl: 8rem; // 128px
+  --space_xxxl: 13rem; // 208px
+
+  // ==========================================================================
+  // 3. SIZE (Typography - Fluid scales with clamp)
+  // ==========================================================================
+
+  --hero: clamp(3rem, 5vw + 1rem, 6rem);
+  --h1: clamp(2.75rem, 5vw + 1rem, 4.5rem);
+  --h2: clamp(1.875rem, 2.3vw + 1rem, 2.75rem);
+  --h3: clamp(1.75rem, 2vw + 1rem, 2.375rem);
+  --h4: 1.5rem;
+  --h5: 1.375rem;
+  --h6: 1.275rem;
+  --p: clamp(1.5rem, 1vw + 1rem, 2rem);
+  --small: clamp(1.25rem, 0.7vw + 1rem, 1.5rem);
+  --smaller: clamp(1.125rem, 0.35vw + 1rem, 1.25rem);
+  --smallest: clamp(1rem, 0.125vw + 1rem, 1.125rem);
+
+  // ==========================================================================
+  // 4. FONT
+  // ==========================================================================
+
+  // Weights (match @font-face definitions)
+  --font_weight_light: 300;
+  --font_weight_regular: 400;
+  --font_weight_medium: 500;
+  --font_weight_semibold: 600;
+  --font_weight_bold: 700;
+
+  // Line heights
+  --line_height_tight: 1.2;
+  --line_height_normal: 1.4;
+  --line_height_relaxed: 1.6;
+  --line_height_loose: 1.8;
+
+  // ==========================================================================
+  // 5. BORDER
+  // ==========================================================================
+
+  // Widths
+  --border_width_none: 0;
+  --border_width_thin: 1px;
+  --border_width_medium: 2px;
+  --border_width_thick: 4px;
+  --border_width_heavy: 8px;
+
+  // Styles (semantic)
+  --border_style_solid: solid;
+  --border_style_dashed: dashed;
+  --border_style_dotted: dotted;
+
+  // ==========================================================================
+  // 6. BORDER RADIUS (Linear scale 2px increments)
+  // ==========================================================================
+
+  --radius_none: 0;
+  --radius_xs: 2px;
+  --radius_sm: 4px;
+  --radius_md: 8px;
+  --radius_lg: 12px;
+  --radius_xl: 16px;
+  --radius_2xl: 24px;
+  --radius_3xl: 32px;
+  --radius_full: 9999px; // Pill buttons (replaces 2.8rem)
+
+  // ==========================================================================
+  // 7. SHADOW (Material Design elevation system)
+  // ==========================================================================
+
+  --shadow_none: none;
+  --shadow_xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow_sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow_md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow_lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow_xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow_2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  // Special effects
+  --shadow_inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --shadow_glow: 0 0 15px rgb(187 255 0 / 0.5); // Acid color glow
+
+  // ==========================================================================
+  // 8. GRADIENT (Directional presets)
+  // ==========================================================================
+
+  // Directions
+  --gradient_to_t: to top;
+  --gradient_to_tr: to top right;
+  --gradient_to_r: to right;
+  --gradient_to_br: to bottom right;
+  --gradient_to_b: to bottom;
+  --gradient_to_bl: to bottom left;
+  --gradient_to_l: to left;
+  --gradient_to_tl: to top left;
+
+  // Semantic gradients (use after color definitions)
+  // Note: These will be defined in the color section below
+
+  // ==========================================================================
+  // 9. Z-INDEX (Numeric descriptive scale)
+  // ==========================================================================
+
+  --z_base: 0;
+  --z_10: 10; // Slightly elevated elements
+  --z_20: 20; // Dropdowns, popovers
+  --z_30: 30; // Sticky headers
+  --z_40: 40; // Fixed elements
+  --z_50: 50; // Modals, overlays
+  --z_60: 60; // Tooltips
+  --z_70: 70; // Notifications, toasts
+  --z_80: 80; // Critical UI (cookie banners)
+  --z_90: 90; // Debug/dev tools
+  --z_max: 9999; // Force top layer
+
+  // ==========================================================================
+  // 10. ICONS (Extended scale)
+  // ==========================================================================
+
+  --icon_xs: 16px;
+  --icon_sm: 24px;
+  --icon_md: 32px;
+  --icon_lg: 48px;
+  --icon_xl: 64px;
+
+  // ==========================================================================
+  // 11. COLOR SYSTEM
+  // ==========================================================================
+
+  // Special accent
+  --acid: hsl(76, 100%, 50%);
+
+  // Golden ratio
+  --phi: 1.618;
+  --golden_large: 0.618;
+  --golden_small: 0.382;
+
+  // White scale (opacity-based)
+  --w50: hsla(0, 0%, 100%, 0.06);
+  --w100: hsla(0, 0%, 100%, 0.12);
+  --w200: hsla(0, 0%, 100%, 0.18);
+  --w250: hsla(0, 0%, 100%, 0.24);
+  --w300: hsla(0, 0%, 100%, 0.29);
+  --w350: hsla(0, 0%, 100%, 0.36);
+  --w400: hsla(0, 0%, 100%, 0.39);
+  --w450: hsla(0, 0%, 100%, 0.44);
+  --w500: hsla(0, 0%, 100%, 0.51);
+  --w550: hsla(0, 0%, 100%, 0.56);
+  --w600: hsla(0, 0%, 100%, 0.59);
+  --w650: hsla(0, 0%, 100%, 0.64);
+  --w700: hsla(0, 0%, 100%, 0.7);
+  --w750: hsla(0, 0%, 100%, 0.74);
+  --w800: hsla(0, 0%, 100%, 0.78);
+  --w850: hsla(0, 0%, 100%, 0.82);
+  --w900: hsla(0, 0%, 100%, 0.91);
+  --w950: hsla(0, 0%, 100%, 0.96);
+
+  // Black scale (opacity-based)
+  --b50: hsla(0, 0%, 0%, 0.12);
+  --b100: hsla(0, 0%, 0%, 0.15);
+  --b200: hsla(0, 0%, 0%, 0.18);
+  --b250: hsla(0, 0%, 0%, 0.21);
+  --b300: hsla(0, 0%, 0%, 0.25);
+  --b350: hsla(0, 0%, 0%, 0.3);
+  --b400: hsla(0, 0%, 0%, 0.38);
+  --b450: hsla(0, 0%, 0%, 0.42);
+  --b500: hsla(0, 0%, 0%, 0.46);
+  --b550: hsla(0, 0%, 0%, 0.5);
+  --b600: hsla(0, 0%, 0%, 0.58);
+  --b650: hsla(0, 0%, 0%, 0.62);
+  --b700: hsla(0, 0%, 0%, 0.7);
+  --b750: hsla(0, 0%, 0%, 0.74);
+  --b800: hsla(0, 0%, 0%, 0.78);
+  --b850: hsla(0, 0%, 0%, 0.82);
+  --b900: hsla(0, 0%, 0%, 0.91);
+  --b950: hsla(0, 0%, 0%, 0.96);
+}
+
+// ==============================================================================
+// THEME SYSTEM (Dark/Light modes)
+// ==============================================================================
+
+// DARK THEME (default)
+:root,
+[data-theme="dark"] {
+  --default: hsla(0, 0%, 100%, 0.03);
+  --raised: hsla(0, 0%, 50%, 0.06);
+  --overlay: hsla(240, 0%, 50%, 0.09);
+  --negative: hsla(240, 0%, 100%, 0.96);
+
+  // Semantic gradients for dark theme
+  --gradient_primary: linear-gradient(
+    var(--gradient_to_r),
+    hsl(240, 88%, 41%),
+    hsl(229, 88%, 39%)
+  );
+  --gradient_emphasis: linear-gradient(
+    var(--gradient_to_br),
+    hsl(260, 75%, 18%),
+    hsl(345, 75%, 19%)
+  );
+  --gradient_acid: linear-gradient(
+    var(--gradient_to_r),
+    hsl(76, 100%, 50%),
+    hsl(76, 100%, 70%)
+  );
+}
+
+// LIGHT THEME (prefers-color-scheme)
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --default: hsla(0, 100%, 100%, 0.97);
+    --raised: hsla(0, 0%, 100%, 0.93);
+    --overlay: hsla(0, 0%, 100%, 0.9);
+    --negative: hsla(0, 100%, 0%, 0.96);
+
+    // Semantic gradients for light theme
+    --gradient_primary: linear-gradient(
+      var(--gradient_to_r),
+      hsl(240, 88%, 45%),
+      hsl(229, 88%, 43%)
+    );
+    --gradient_emphasis: linear-gradient(
+      var(--gradient_to_br),
+      hsl(260, 75%, 25%),
+      hsl(345, 75%, 25%)
+    );
+    --gradient_acid: linear-gradient(
+      var(--gradient_to_r),
+      hsl(76, 100%, 45%),
+      hsl(76, 100%, 65%)
+    );
+  }
+}
+
+// LIGHT THEME (data-attribute override)
+[data-theme="light"] {
+  --default: hsla(0, 100%, 100%, 0.97);
+  --raised: hsla(0, 0%, 100%, 0.93);
+  --overlay: hsla(0, 0%, 100%, 0.9);
+  --negative: hsla(0, 100%, 0%, 0.96);
+
+  // Semantic gradients for light theme
+  --gradient_primary: linear-gradient(
+    var(--gradient_to_r),
+    hsl(240, 88%, 45%),
+    hsl(229, 88%, 43%)
+  );
+  --gradient_emphasis: linear-gradient(
+    var(--gradient_to_br),
+    hsl(260, 75%, 25%),
+    hsl(345, 75%, 25%)
+  );
+  --gradient_acid: linear-gradient(
+    var(--gradient_to_r),
+    hsl(76, 100%, 45%),
+    hsl(76, 100%, 65%)
+  );
+}
+
+// ==============================================================================
+// BREAKPOINTS (for responsive mixins)
+// ==============================================================================
+
+$breakpoints: (
+  "mobile": 480px,
+  "tablet": 768px,
+  "desktop": 1024px,
+  "wide": 1200px,
+  "ultra_wide": 1600px,
+);
+
+// ==============================================================================
+// PRIMITIVE COLORS (HSL for manipulation)
+// ==============================================================================
+
+$primitive-colors: (
+  "tangerine": hsl(7, 90%, 48%),
+  "red": hsl(10, 94%, 35%),
+  "amber": hsl(21, 82%, 35%),
+  "goldenhour": hsl(37, 93%, 45%),
+  "sunrise": hsl(48, 53%, 42%),
+  "yellow": hsl(54, 75%, 32%),
+  "green": hsl(98, 94%, 26%),
+  "verdant": hsl(120, 74%, 33%),
+  "meadow": hsl(142, 71%, 45%),
+  "mint": hsl(164, 89%, 28%),
+  "lagoon": hsl(184, 100%, 29%),
+  "jade": hsl(202, 100%, 35%),
+  "emerald": hsl(210, 96%, 46%),
+  "cyan": hsl(219, 100%, 40%),
+  "teal": hsl(229, 88%, 39%),
+  "ocean": hsl(240, 88%, 41%),
+  "blue": hsl(243, 100%, 42%),
+  "azure": hsl(249, 92%, 37%),
+  "sapphire": hsl(258, 80%, 53%),
+  "indigo": hsl(256, 97%, 31%),
+  "purple": hsl(270, 100%, 30%),
+  "viola": hsl(275, 82%, 54%),
+  "royalpurple": hsl(282, 79%, 53%),
+  "plum": hsl(287, 80%, 52%),
+  "magenta": hsl(293, 82%, 51%),
+  "orchid": hsl(298, 88%, 34%),
+  "bubblegum": hsl(311, 83%, 51%),
+  "rose": hsl(324, 87%, 42%),
+  "cherry": hsl(336, 67%, 40%),
+  "flame": hsl(348, 84%, 35%),
+  // Deeper variants
+  "deep_purple": hsl(260, 75%, 18%),
+  "deep_fire": hsl(10, 75%, 19%),
+  "deep_yellow": hsl(60, 75%, 19%),
+  "deep_green": hsl(105, 75%, 18%),
+  "deep_turquoise": hsl(168, 75%, 18%),
+  "deep_blue": hsl(224, 75%, 18%),
+  "deep_fuschia": hsl(345, 75%, 19%),
+);
+
+// ==============================================================================
+// SEMANTIC COLORS (Business logic mapping)
+// ==============================================================================
+// Philosophy: "Color names must answer 'why', not 'what'" - Jina Anne
+
+$colors: (
+  "primary": map.get($primitive-colors, "ocean"),
+  "secondary": map.get($primitive-colors, "indigo"),
+  "thirdary": map.get($primitive-colors, "purple"),
+  "accent": map.get($primitive-colors, "teal"),
+  "success": map.get($primitive-colors, "meadow"),
+  "warning": map.get($primitive-colors, "amber"),
+  "error": map.get($primitive-colors, "tangerine"),
+  "emphasis": map.get($primitive-colors, "deep_purple"),
+  "informative": map.get($primitive-colors, "deep_turquoise"),
+  "identity": map.get($primitive-colors, "deep_fuschia"),
+  "critical": map.get($primitive-colors, "deep_fire"),
+  "reassuring": map.get($primitive-colors, "deep_blue"),
+);

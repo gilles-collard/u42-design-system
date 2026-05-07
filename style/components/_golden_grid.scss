@@ -1,0 +1,43 @@
+@use "sass:math";
+@use "responsive" as *;
+
+:root {
+  --phi: 1.618;
+  --golden_large: 0.618;
+  --golden_small: 0.382;
+}
+
+.golden_row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.golden_lg {
+  width: 61.79%;
+}
+.golden_sm {
+  width: 38.19%;
+}
+
+@include tablet {
+  .golden_row {
+    flex-direction: column;
+  }
+
+  .golden_lg,
+  .golden_sm {
+    width: 100%;
+  }
+}
+
+@include mobile {
+  .golden_row {
+    flex-direction: column;
+  }
+
+  .golden_lg,
+  .golden_sm {
+    width: 100%;
+  }
+}

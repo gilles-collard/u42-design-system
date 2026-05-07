@@ -1,0 +1,45 @@
+@mixin text-outline($size, $text-color, $stroke-color) {
+  color: $text-color;
+  text-shadow:
+    -#{$size} -#{$size} 0 $stroke-color,
+    #{$size} -#{$size} 0 $stroke-color,
+    -#{$size} #{$size} 0 $stroke-color,
+    #{$size} #{$size} 0 $stroke-color;
+}
+
+/*
+.use {
+  @include text-outline(2px, white, black);
+  }
+  */
+
+// Mixins partagés. Aucune valeur hardcodée — uniquement des références tokens.
+
+@mixin focus-ring {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin surface-raised {
+  background: var(--raised);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+}
+
+@mixin surface-overlay {
+  background: var(--overlay);
+  border: 1px solid var(--border-base);
+  border-radius: 8px;
+}
