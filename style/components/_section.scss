@@ -1,0 +1,11 @@
+.section {
+  margin-inline: auto;
+
+  &--raised { background: var(--bg-base-2); max-width: none; }
+  &--inner  { margin-inline: auto; }
+}
+
+.section__header {}
+.section__label  {}
+.section__title  {}
+.section__body   {}

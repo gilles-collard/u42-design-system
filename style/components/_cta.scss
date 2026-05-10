@@ -1,0 +1,16 @@
+.cta {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+}
+
+.cta__title   {}
+.cta__subtitle{}
+
+.cta__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cta__note {}

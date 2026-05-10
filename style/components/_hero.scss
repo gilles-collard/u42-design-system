@@ -1,0 +1,21 @@
+.hero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  justify-content: center;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero__note {
+  margin-top: calc(var(--space-05) * -1);
+}

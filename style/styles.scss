@@ -1,35 +1,28 @@
-// u42 Design System — landing page entry point.
+// u42 Design System — entry point
 // npx sass --watch style/styles.scss style.css
 @charset "UTF-8";
 
 @use "variables/tokens";
-
 @use "variables/themes";
 
-@use "components/btn";
-
-@use "components/colors";
-
-@use "components/data";
-
+@use "components/text";
 @use "components/fonts";
 
-@use "components/footer";
-
+@use "components/button";
 @use "components/header";
-
-@use "components/mixins";
-
+@use "components/footer";
 @use "components/nav";
 
-@use "components/pattern";
-
-@use "components/spacer";
-
-@use "components/template";
+@use "components/hero";
+@use "components/section";
+@use "components/cta";
+@use "components/visual";
 
 @use "components/table";
-
 @use "components/tabs";
-
-@use "components/text";
+@use "components/colors";
+@use "components/data";
+@use "components/pattern";
+@use "components/spacer";
+@use "components/template";
+@use "components/mixins";

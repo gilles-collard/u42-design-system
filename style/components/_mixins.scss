@@ -7,16 +7,10 @@
     #{$size} #{$size} 0 $stroke-color;
 }
 
-/*
-.use {
-  @include text-outline(2px, white, black);
-  }
-  */
-
 // Mixins partagés. Aucune valeur hardcodée — uniquement des références tokens.
 
 @mixin focus-ring {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--bg-brand);
   outline-offset: 2px;
 }
 
@@ -33,13 +27,13 @@
 }
 
 @mixin surface-raised {
-  background: var(--raised);
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
+  background: var(--bg-base-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-400);
 }
 
 @mixin surface-overlay {
-  background: var(--overlay);
-  border: 1px solid var(--border-base);
-  border-radius: 8px;
+  background: var(--bg-base-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-400);
 }

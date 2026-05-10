@@ -1,29 +1,88 @@
-[data-theme="light"] {
-  --bg-color: var(--gray-0);
-  --text-color: var(--gray-900);
+// u42 Design System — Themes
+// Figma Color collection (Dark / Light)
+// Background/X/Default → --bg-x  |  Text/X → --text-x  |  Border/X → --border-x
+// Source: https://www.figma.com/design/fHev06Fqr0ucJZG2KSSLhM
 
-  --surface: var(--gray-40);
-  --border: var(--gray-180);
+@mixin light-theme {
+  color-scheme: light;
+  --bg-base:      #ffffff;
+  --bg-base-2:    #ededed;
+  --bg-base-3:    #f5f5f5;
+  --bg-neutral:   #cfcfcf;
+  --bg-neutral-2: #b8b8b8;
+  --bg-brand:     #080808;
+  --bg-brand-2:   #e6e6e6;
+  --bg-positive:  #14ae5c;
+  --bg-warning:   #e6a000;
+  --bg-danger:    #ec221f;
+  --bg-disabled:  #b8b8b8;
+  --text-default:  #080808;
+  --text-subtle:   #8a8a8a;
+  --text-faint:    #a1a1a1;
+  --text-disabled: #5c5c5c;
+  --text-on-brand: #e6e6e6;
+  --text-positive: #14ae5c;
+  --text-warning:  #e6a000;
+  --text-danger:   #ec221f;
+  --border-default:  #e6e6e6;
+  --border-subtle:   #cfcfcf;
+  --border-strong:   #b8b8b8;
+  --border-brand:    #1e1e1e;
+  --border-positive: #14ae5c;
+  --border-warning:  #e6a000;
+  --border-danger:   #ec221f;
+  --border-disabled: #a1a1a1;
+  --icon-default:  #080808;
+  --icon-subtle:   #737373;
+  --icon-neutral:  #767676;
+  --icon-brand:    #1e1e1e;
+  --icon-positive: #009951;
+  --icon-warning:  #bf6a02;
+  --icon-danger:   #c00f0c;
 }
 
+// DARK (default)
+:root,
 [data-theme="dark"] {
-  --bg-color: var(--gray-970);
-  --text-color: var(--gray-70);
-
-  --surface: var(--gray-900);
-  --border: var(--gray-720);
-
-  --color-default: var(--gray-40);
-  --color-muted: var(--gray-380);
-  --color-faint: var(--gray-620);
+  color-scheme: dark;
+  --bg-base:      #080808;
+  --bg-base-2:    #0f0f0f;
+  --bg-base-3:    #171717;
+  --bg-neutral:   #1e1e1e;
+  --bg-neutral-2: #2e2e2e;
+  --bg-brand:     #f5f5f5;
+  --bg-brand-2:   #1e1e1e;
+  --bg-positive:  #009951;
+  --bg-warning:   #bf6a02;
+  --bg-danger:    #c00f0c;
+  --bg-disabled:  #454545;
+  --text-default:  #f5f5f5;
+  --text-subtle:   #a19b9d;
+  --text-faint:    #6e6869;
+  --text-disabled: #6e6869;
+  --text-on-brand: #1e1e1e;
+  --text-positive: #14ae5c;
+  --text-warning:  #e6a000;
+  --text-danger:   #ec221f;
+  --border-default:  #1e1e1e;
+  --border-subtle:   #2e2e2e;
+  --border-strong:   #454545;
+  --border-brand:    #f5f5f5;
+  --border-positive: #009951;
+  --border-warning:  #bf6a02;
+  --border-danger:   #c00f0c;
+  --border-disabled: #454545;
+  --icon-default:  #f5f5f5;
+  --icon-subtle:   #a1a1a1;
+  --icon-neutral:  #b2b2b2;
+  --icon-brand:    #e6e6e6;
+  --icon-positive: #85e0a3;
+  --icon-warning:  #e8b931;
+  --icon-danger:   #f4776a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: var(--gray-1000);
-    --text-color: var(--gray-70);
-
-    --surface: var(--gray-970);
-    --border: var(--gray-720);
-  }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { @include light-theme; }
 }
+
+[data-theme="light"] { @include light-theme; }

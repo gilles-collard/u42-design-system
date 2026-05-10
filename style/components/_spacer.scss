@@ -1,49 +1,47 @@
+// ─── Spacing utilities ────────────────────────────────────────────────────────
+// Couvre tous les tokens --space-05 à --space-16
+
 $spacers: (
-  "1": var(--space-1),
-  "2": var(--space-2),
-  "3": var(--space-3),
-  "4": var(--space-4),
-  "5": var(--space-5),
-  "6": var(--space-6),
-  "7": var(--space-7),
-  "8": var(--space-8),
-  "9": var(--space-9),
+  "05": var(--space-05),
+  "1":  var(--space-1),
+  "2":  var(--space-2),
+  "3":  var(--space-3),
+  "4":  var(--space-4),
+  "5":  var(--space-5),
+  "6":  var(--space-6),
+  "7":  var(--space-7),
+  "8":  var(--space-8),
+  "9":  var(--space-9),
   "10": var(--space-10),
+  "11": var(--space-11),
+  "12": var(--space-12),
+  "13": var(--space-13),
+  "14": var(--space-14),
+  "15": var(--space-15),
+  "16": var(--space-16),
 );
 
-@each $name, $value in $spacers {
-  .p_#{$name} {
-    padding: #{$value};
-  }
-  .pw_#{$name} {
-    padding-left: #{$value};
-    padding-right: #{$value};
-  }
-  .ph_#{$name} {
-    padding-top: #{$value};
-    padding-bottom: #{$value};
-  }
-  .pt_#{$name} {
-    padding-top: #{$value};
-  }
-  .pb_#{$name} {
-    padding-bottom: #{$value};
-  }
-  .m_#{$name} {
-    margin: #{$value};
-  }
-  .mw_#{$name} {
-    margin-left: #{$value};
-    margin-right: #{$value};
-  }
-  .mh_#{$name} {
-    margin-top: #{$value};
-    margin-bottom: #{$value};
-  }
-  .mt_#{$name} {
-    margin-top: #{$value};
-  }
-  .mb_#{$name} {
-    margin-bottom: #{$value};
-  }
+@each $n, $v in $spacers {
+  .p_#{$n}       { padding: #{$v};        }
+  .px_#{$n}      { padding-inline: #{$v}; }
+  .py_#{$n}      { padding-block: #{$v};  }
+  .pt_#{$n}      { padding-top: #{$v};    }
+  .pb_#{$n}      { padding-bottom: #{$v}; }
+  .pl_#{$n}      { padding-left: #{$v};   }
+  .pr_#{$n}      { padding-right: #{$v};  }
+
+  .m_#{$n}       { margin: #{$v};         }
+  .mx_#{$n}      { margin-inline: #{$v};  }
+  .my_#{$n}      { margin-block: #{$v};   }
+  .mt_#{$n}      { margin-top: #{$v};     }
+  .mb_#{$n}      { margin-bottom: #{$v};  }
+  .ml_#{$n}      { margin-left: #{$v};    }
+  .mr_#{$n}      { margin-right: #{$v};   }
+
+  .gap_#{$n}     { gap: #{$v};            }
+  .col-gap_#{$n} { column-gap: #{$v};     }
 }
+
+.mx-auto { margin-inline: auto; }
+.ml-auto { margin-left: auto;   }
+.mr-auto { margin-right: auto;  }

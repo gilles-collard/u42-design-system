@@ -1,27 +1,18 @@
 html {
   font-size: 16px;
-  // user-select: none;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family:
-    "Suisse Intl",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    "Liberation Sans",
-    sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  line-height: 1.4;
+  line-height: var(--leading-base);
+  color: var(--text-default);
   transition: var(--transition);
 }
 
-/* reset */
+/* ── Reset ─────────────────────────────────────────────────────────────────── */
 
 h1,
 h2,
@@ -30,41 +21,34 @@ h4,
 h5,
 h6 {
   margin: 0;
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
 }
-
-p {
-  margin: 0;
-}
+p,
 ol,
 ul,
 dl {
   margin: 0;
 }
-
 ol ol,
 ul ul,
 ol ul,
 ul ol {
   margin-bottom: 0;
 }
-
 dt {
-  font-weight: 700;
+  font-weight: var(--weight-bold);
 }
-
 dd {
   margin: 0;
 }
-
 blockquote {
   margin: 0 0 1rem;
 }
-
 b,
 strong {
   font-weight: bolder;
 }
-
 small {
   font-size: 80%;
 }
@@ -76,11 +60,9 @@ sup {
   line-height: 0;
   vertical-align: baseline;
 }
-
 sub {
   bottom: -0.25em;
 }
-
 sup {
   top: -0.5em;
 }
@@ -88,33 +70,17 @@ sup {
 a {
   text-decoration: none;
   background-color: transparent;
-  color: var(--prime600);
+  color: var(--text-default);
 }
-
-.underline:hover {
-  text-decoration: underline;
-}
-
 a:not([href]):not([class]) {
   color: inherit;
   text-decoration: none;
 }
-
-a:not([href]):not([class]):hover {
-  color: inherit;
-  text-decoration: none;
+.underline:hover {
+  text-decoration: underline;
 }
 
-/* SYZE */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
-  line-height: 1.2;
-}
+/* ── Size ───────────────────────────────────────────────────────────────────── */
 
 .hero {
   font-size: var(--hero);
@@ -137,7 +103,6 @@ h6 {
 .h6 {
   font-size: var(--h6);
 }
-
 .h1,
 .h2,
 .h3,
@@ -146,89 +111,109 @@ h6 {
 .h6 {
   margin: 0.6em 0;
 }
-
 .p {
   font-size: var(--p);
   margin: 0.4em 0;
 }
-
 .small {
   font-size: var(--small);
 }
-
 .smaller {
   font-size: var(--smaller);
 }
-
 .smallest {
   font-size: var(--smallest);
 }
-
 .nano {
   font-size: var(--nano);
 }
 
-/* LINE HEIGHT */
+/* ── Weight ─────────────────────────────────────────────────────────────────── */
 
-.lh_1 {
-  min-height: 2em;
+.light {
+  font-weight: var(--weight-light);
 }
-.lh_2 {
-  min-height: 3em;
+.regular {
+  font-weight: var(--weight-regular);
 }
-.lh_3 {
-  min-height: 4em;
+.medium {
+  font-weight: var(--weight-medium);
 }
-.lh_4 {
-  min-height: 5em;
+.semibold {
+  font-weight: var(--weight-semibold);
 }
-.lh_5 {
-  min-height: 6em;
-}
-.lh_6 {
-  min-height: 7em;
+.bold {
+  font-weight: var(--weight-bold);
 }
 
-/* MISC */
-.selected {
-  user-select: text;
+/* ── Family ─────────────────────────────────────────────────────────────────── */
+
+.sans {
+  font-family: var(--font-sans);
 }
+.serif {
+  font-family: var(--font-serif);
+}
+.mono {
+  font-family: var(--font-mono);
+}
+.monospace {
+  font-family: var(--font-mono);
+}
+
+/* ── Line height ────────────────────────────────────────────────────────────── */
+
+.lh-tight {
+  line-height: var(--leading-tight);
+}
+.lh-snug {
+  line-height: var(--leading-snug);
+}
+.lh-base {
+  line-height: var(--leading-base);
+}
+.lh-loose {
+  line-height: var(--leading-loose);
+}
+
+/* ── Letter spacing ─────────────────────────────────────────────────────────── */
+
+.tracking-tight {
+  letter-spacing: var(--tracking-tight);
+}
+.tracking-wider {
+  letter-spacing: var(--tracking-wider);
+}
+.tracking-widest {
+  letter-spacing: var(--tracking-widest);
+}
+
+/* ── Style ──────────────────────────────────────────────────────────────────── */
 
 .uppercase {
   text-transform: uppercase;
 }
-
 .italic {
   font-style: italic;
 }
-
-/* FAMILIES */
-.light {
-  font-family: "Suisse Intl Light";
+.nowrap {
+  white-space: nowrap;
+}
+.selected {
+  user-select: text;
 }
 
-.regular {
-  font-family: "Suisse Intl";
-}
+/* ── Color ──────────────────────────────────────────────────────────────────── */
 
-.medium {
-  font-family: "Suisse Intl Medium";
+.text-default {
+  color: var(--text-default);
 }
-
-.semibold {
-  font-family: "Suisse Intl Semi Bold";
+.text-subtle {
+  color: var(--text-subtle);
 }
-
-.bold {
-  font-family: "Suisse Intl Bold";
+.text-disabled {
+  color: var(--text-disabled);
 }
-
-/* MONOSPACE */
-.monospace {
-  font-family: "JetBrains Mono Regular", monospace;
-}
-
-/* CONDENSED */
-.condensed {
-  font-family: "Suisse Intl Cond";
+.text-faint {
+  color: var(--text-faint);
 }
