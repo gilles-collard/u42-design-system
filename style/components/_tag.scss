@@ -1,0 +1,59 @@
+// ============================================================
+// Tag — label, chip, badge
+// Figma : Tags ✓ — node 56:8830
+// Variants : Primary (filled) | Secondary (outline, default)
+// Schemes  : neutral (default) | brand | positive | danger | warning
+// ============================================================
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-05) var(--space-1);
+  border-radius: var(--radius-full);
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  background: var(--bg-overlay-hover);
+  color: var(--text-subtle);
+
+  // ── Compact (table, badges) ─────────────────────────────
+  &--sm {
+    padding: 2px var(--space-1);
+    font-size: var(--nano);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  // ── Variant Primary (filled) ────────────────────────────
+  &--primary {
+    border-color: transparent;
+    background: var(--bg-brand);
+    color: var(--text-on-brand);
+  }
+
+  // ── Schemes ─────────────────────────────────────────────
+  &--positive {
+    border-color: transparent;
+    background: var(--bg-positive);
+    color: var(--text-on-brand);
+  }
+
+  &--danger {
+    border-color: transparent;
+    background: var(--bg-danger);
+    color: var(--text-on-brand);
+  }
+
+  &--warning {
+    border-color: transparent;
+    background: var(--bg-warning);
+    color: var(--text-default);
+  }
+
+  &--brand {
+    border-color: transparent;
+    background: var(--bg-brand);
+    color: var(--text-on-brand);
+  }
+}

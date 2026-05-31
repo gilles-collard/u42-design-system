@@ -1,88 +1,93 @@
 // u42 Design System — Themes
 // Figma Color collection (Dark / Light)
-// Background/X/Default → --bg-x  |  Text/X → --text-x  |  Border/X → --border-x
+// Background/X/Default -> --bg-x  |  Text/X -> --text-x  |  Border/X -> --border-x
 // Source: https://www.figma.com/design/fHev06Fqr0ucJZG2KSSLhM
 
 @mixin light-theme {
   color-scheme: light;
-  --bg-base:      #ffffff;
-  --bg-base-2:    #ededed;
-  --bg-base-3:    #f5f5f5;
-  --bg-neutral:   #cfcfcf;
-  --bg-neutral-2: #b8b8b8;
-  --bg-brand:     #080808;
-  --bg-brand-2:   #e6e6e6;
-  --bg-positive:  #14ae5c;
-  --bg-warning:   #e6a000;
-  --bg-danger:    #ec221f;
-  --bg-disabled:  #b8b8b8;
-  --text-default:  #080808;
-  --text-subtle:   #8a8a8a;
-  --text-faint:    #a1a1a1;
-  --text-disabled: #5c5c5c;
-  --text-on-brand: #e6e6e6;
-  --text-positive: #14ae5c;
-  --text-warning:  #e6a000;
-  --text-danger:   #ec221f;
-  --border-default:  #e6e6e6;
-  --border-subtle:   #cfcfcf;
-  --border-strong:   #b8b8b8;
-  --border-brand:    #1e1e1e;
-  --border-positive: #14ae5c;
-  --border-warning:  #e6a000;
-  --border-danger:   #ec221f;
-  --border-disabled: #a1a1a1;
-  --icon-default:  #080808;
-  --icon-subtle:   #737373;
-  --icon-neutral:  #767676;
-  --icon-brand:    #1e1e1e;
-  --icon-positive: #009951;
-  --icon-warning:  #bf6a02;
-  --icon-danger:   #c00f0c;
+  --bg-default: var(--gray-0);
+  --bg-default-hover: var(--gray-70);
+  --bg-neutral: var(--gray-190);
+  --bg-neutral-hover: var(--gray-280);
+  --bg-brand: var(--gray-970);
+  --bg-brand-hover: var(--gray-720);
+  --bg-brand-secondary: var(--gray-100);
+  --bg-positive: var(--green-500);
+  --bg-warning: var(--yellow-500);
+  --bg-danger: var(--red-500);
+  --bg-disabled: var(--gray-280);
+  --bg-overlay: var(--overlay-default);
+  --text-default: var(--gray-970);
+  --text-subtle: var(--gray-460);
+  --text-faint: var(--gray-370);
+  --text-disabled: var(--gray-630);
+  --text-on-brand: var(--gray-100);
+  --text-positive: var(--green-500);
+  --text-warning: var(--yellow-500);
+  --text-danger: var(--red-500);
+  --border-default: var(--gray-100);
+  --border-neutral: var(--gray-190);
+  --border-neutral-tertiary: var(--gray-280);
+  --border-brand: var(--gray-880);
+  --border-warning: var(--yellow-500);
+  --border-danger: var(--red-500);
+  --border-disabled: var(--gray-370);
+  --icon-default: var(--gray-970);
+  --icon-subtle: var(--gray-550);
+  --icon-neutral: var(--slate-600);
+  --icon-brand: var(--gray-880);
+  --icon-positive: var(--green-600);
+  --icon-warning: var(--yellow-600);
+  --icon-danger: var(--red-600);
 }
 
 // DARK (default)
 :root,
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg-base:      #080808;
-  --bg-base-2:    #0f0f0f;
-  --bg-base-3:    #171717;
-  --bg-neutral:   #1e1e1e;
-  --bg-neutral-2: #2e2e2e;
-  --bg-brand:     #f5f5f5;
-  --bg-brand-2:   #1e1e1e;
-  --bg-positive:  #009951;
-  --bg-warning:   #bf6a02;
-  --bg-danger:    #c00f0c;
-  --bg-disabled:  #454545;
-  --text-default:  #f5f5f5;
-  --text-subtle:   #a19b9d;
-  --text-faint:    #6e6869;
-  --text-disabled: #6e6869;
-  --text-on-brand: #1e1e1e;
-  --text-positive: #14ae5c;
-  --text-warning:  #e6a000;
-  --text-danger:   #ec221f;
-  --border-default:  #1e1e1e;
-  --border-subtle:   #2e2e2e;
-  --border-strong:   #454545;
-  --border-brand:    #f5f5f5;
-  --border-positive: #009951;
-  --border-warning:  #bf6a02;
-  --border-danger:   #c00f0c;
-  --border-disabled: #454545;
-  --icon-default:  #f5f5f5;
-  --icon-subtle:   #a1a1a1;
-  --icon-neutral:  #b2b2b2;
-  --icon-brand:    #e6e6e6;
-  --icon-positive: #85e0a3;
-  --icon-warning:  #e8b931;
-  --icon-danger:   #f4776a;
+  --bg-default: var(--gray-970);
+  --bg-default-hover: var(--gray-940);
+  --bg-neutral: var(--gray-880);
+  --bg-neutral-hover: var(--gray-810);
+  --bg-brand: var(--gray-40);
+  --bg-brand-hover: var(--gray-280);
+  --bg-brand-secondary: var(--gray-880);
+  --bg-positive: var(--green-600);
+  --bg-warning: var(--yellow-600);
+  --bg-danger: var(--red-600);
+  --bg-disabled: var(--gray-720);
+  --bg-overlay: var(--overlay-default);
+  --bg-overlay-hover: var(--overlay-hover);
+  --text-default: var(--gray-40);
+  --text-subtle: var(--gray-380);
+  --text-faint: var(--gray-620);
+  --text-disabled: var(--gray-620);
+  --text-on-brand: var(--gray-880);
+  --text-positive: var(--green-500);
+  --text-warning: var(--yellow-500);
+  --text-danger: var(--red-500);
+  --border-default: var(--gray-880);
+  --border-neutral: var(--gray-810);
+  --border-neutral-tertiary: var(--gray-720);
+  --border-brand: var(--gray-40);
+  --border-warning: var(--yellow-600);
+  --border-danger: var(--red-600);
+  --border-disabled: var(--gray-720);
+  --icon-default: var(--gray-40);
+  --icon-subtle: var(--gray-370);
+  --icon-neutral: var(--slate-400);
+  --icon-brand: var(--gray-100);
+  --icon-positive: var(--green-400);
+  --icon-warning: var(--yellow-400);
+  --icon-danger: var(--red-400);
 }
 
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) { @include light-theme; }
+  :root:not([data-theme="dark"]) {
+    @include light-theme;
+  }
 }
 
-[data-theme="light"] { @include light-theme; }
+[data-theme="light"] {
+  @include light-theme;
+}

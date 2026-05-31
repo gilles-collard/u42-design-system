@@ -27,13 +27,13 @@
 }
 
 @mixin surface-raised {
-  background: var(--bg-base-2);
+  background: var(--bg-default-hover);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-400);
 }
 
 @mixin surface-overlay {
-  background: var(--bg-base-3);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-neutral);
+  border: 1px solid var(--border-neutral);
   border-radius: var(--radius-400);
 }

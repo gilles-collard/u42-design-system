@@ -2,47 +2,71 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-400);
-  border: 1px solid var(--border-default);
-  background: var(--bg-base-2);
+  appearance: none;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-05) var(--space-1);
+  background: transparent;
   color: var(--text-default);
-  font-size: var(--smaller);
   font-family: var(--font-sans);
-  transition: var(--transition);
+  font-size: var(--smallest);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  user-select: none;
   text-decoration: none;
   cursor: pointer;
+  transition: var(--transition);
 
   &:hover {
-    background: var(--bg-base-3);
-    border-color: var(--border-subtle);
+    background: var(--bg-overlay);
   }
-  &:disabled { opacity: 0.5; cursor: not-allowed; }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
-.btn--primary {
+.btn_primary {
   background: var(--bg-brand);
   color: var(--text-on-brand);
-  border-color: var(--bg-brand);
 
-  &:hover { filter: brightness(1.1); background: var(--bg-brand); }
+  &:hover {
+    background: var(--bg-brand-hover);
+  }
 }
 
-.btn--ghost {
-  background: transparent;
-  border-color: transparent;
+.btn_secondary {
+  background: var(--bg-overlay);
 
-  &:hover { background: var(--bg-base-2); }
+  &:hover {
+    background: var(--bg-overlay-hover);
+  }
 }
 
-.btn--destructive {
-  background: var(--bg-danger);
-  color: var(--text-on-brand);
-  border-color: var(--bg-danger);
-
-  &:hover { filter: brightness(1.1); background: var(--bg-danger); }
+.btn_big {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--small);
 }
 
-.btn--sm {
-  padding: 0.25rem var(--space-05);
-  font-size: var(--smallest);
+// Filled blue button
+.btn_info {
+  background: var(--blue-600);
+  color: #fff;
+
+  &:hover {
+    background: var(--blue-700);
+  }
+}
+
+// Ghost = default .btn (transparent, text only)
+.btn_ghost {}
+
+// Blue text modifier
+.btn_blue {
+  color: var(--blue-600);
+
+  &:hover {
+    background: transparent;
+    color: var(--blue-700);
+  }
 }

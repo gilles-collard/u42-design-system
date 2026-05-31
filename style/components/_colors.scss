@@ -1,14 +1,46 @@
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
+// u42 Design System — Color utilities
+// Background helpers
+.bg_default {
+  background: var(--bg-default);
+}
+.bg_brand {
+  background: var(--bg-brand);
+}
+.bg_positive {
+  background: var(--bg-positive);
+}
+.bg_warning {
+  background: var(--bg-warning);
+}
+.bg_danger {
+  background: var(--bg-danger);
+}
+.bg_raised {
+  background: var(--bg-default-hover);
+}
+.bg_overlay {
+  background: var(--bg-overlay);
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-.lighter {
-  color: var(--text-color);
+// Text helpers
+.text_default {
+  color: var(--text-default);
+}
+.text_subtle {
+  color: var(--text-subtle);
+}
+.text_faint {
+  color: var(--text-faint);
+}
+.text_disabled {
+  color: var(--text-disabled);
+}
+.text_positive {
+  color: var(--text-positive);
+}
+.text_warning {
+  color: var(--text-warning);
+}
+.text_danger {
+  color: var(--text-danger);
 }

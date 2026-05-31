@@ -2,19 +2,6 @@
   border-top: 1px solid var(--border-default);
 }
 
-.footer__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin-inline: auto;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-1);
-  }
-}
 
 .footer__logo    { text-decoration: none; }
 .footer__tagline {}

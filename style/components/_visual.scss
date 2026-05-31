@@ -1,6 +1,5 @@
 .visual {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -12,10 +11,16 @@
   align-items: center;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--border-subtle);
+  border-color: var(--border-neutral);
 
-  &.--say    { border-top-right-radius: var(--radius-full); border-bottom-right-radius: var(--radius-full); }
-  &.--do     { border-top-left-radius: var(--radius-full);  border-bottom-left-radius: var(--radius-full);  }
+  &.--say {
+    border-top-right-radius: var(--radius-full);
+    border-bottom-right-radius: var(--radius-full);
+  }
+  &.--do {
+    border-top-left-radius: var(--radius-full);
+    border-bottom-left-radius: var(--radius-full);
+  }
   &.--decide {
     border-radius: var(--radius-full);
     position: relative;
@@ -26,7 +31,7 @@
       height: 200px;
       border-style: solid;
       border-width: 1px;
-      border-color: var(--border-subtle);
+      border-color: var(--border-neutral);
     }
   }
 }
@@ -40,27 +45,28 @@
 
 .when__item {
   position: relative;
-
-  .icon {
-    position: absolute;
-    left: 0;
-  }
 }
 
 .principles__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 480px)  { grid-template-columns: 1fr;            }
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .principle {
   border: 1px solid var(--border-default);
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-base-3);
+  background-color: var(--bg-neutral);
 }
 
-.principle__title {}
-.principle__desc  {}
+.principle__title {
+}
+.principle__desc {
+}

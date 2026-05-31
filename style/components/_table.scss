@@ -1,6 +1,13 @@
-[tabindex="-1"]:focus:not(:focus-visible) { outline: 0 !important; }
-table  { border-collapse: collapse; }
-th     { text-align: inherit; text-align: -webkit-match-parent; }
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
 
 .table {
   width: 100%;
@@ -9,18 +16,22 @@ th     { text-align: inherit; text-align: -webkit-match-parent; }
 
 .table__row {
   display: grid;
-  grid-template-columns: 2fr 3fr auto 4.5rem 1.5rem;
+  grid-template-columns: 2fr 3fr 2fr 9rem 1.5rem;
   align-items: center;
   border-bottom: 1px solid var(--border-default);
   text-decoration: none;
-  transition: background 0.15s ease-in, padding 0.15s ease-in;
+  transition:
+    background 0.15s ease-in,
+    padding 0.15s ease-in;
 
   &:hover:not(.table__row--disabled) {
-    background: var(--bg-base-2);
+    background: var(--bg-default-hover);
     padding-inline: 0.75rem;
     border-radius: var(--radius-200);
 
-    .table__arrow { color: var(--text-positive); }
+    .table__arrow {
+      color: var(--text-positive);
+    }
   }
 
   &--disabled {
@@ -28,23 +39,33 @@ th     { text-align: inherit; text-align: -webkit-match-parent; }
 
     .table__index,
     .table__name,
-    .table__role,
     .table__desc,
-    .table__uri,
-    .table__status-label { color: var(--text-disabled); }
+    .table__status-label {
+      color: var(--text-disabled);
+    }
 
-    .table__dot   { background: var(--text-disabled); }
-    .table__arrow { visibility: hidden; }
+    .table__dot {
+      background: var(--text-disabled);
+    }
+    .table__arrow {
+      visibility: hidden;
+    }
   }
 }
 
-.table__id-name  { display: flex; align-items: center; }
-.table__identity { display: flex; flex-direction: column; }
-.table__index    {}
-.table__name     {}
-.table__role     {}
-.table__desc     {}
-.table__uri      {}
+.table__id-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.table__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-05);
+  justify-content: center;
+  align-items: center;
+}
 
 .table__status {
   display: flex;
@@ -53,12 +74,14 @@ th     { text-align: inherit; text-align: -webkit-match-parent; }
 }
 
 .table__dot {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: var(--radius-full);
   background: var(--bg-positive);
   flex-shrink: 0;
 }
 
-.table__status-label {}
-.table__arrow        { text-align: right; transition: color 0.15s ease-in; }
+.table__arrow {
+  text-align: right;
+  transition: color 0.15s ease-in;
+}

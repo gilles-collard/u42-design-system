@@ -19,7 +19,7 @@
 
   .content_item {
     opacity: 0;
-    transition: color var(--duration-normal);
+    transition: color var(--duration-base);
 
     &.visible {
       opacity: 1;
@@ -36,14 +36,14 @@
   font-family: "Suisse Intl Bold";
   font-weight: 700;
   font-size: var(--p);
-  color: var(--w300);
+  color: var(--text-subtle);
   margin: 1em 0.3em;
   cursor: pointer;
 
-  transition: color var(--duration-normal);
+  transition: color var(--duration-base);
 
   &.active {
-    color: var(--w950);
+    color: var(--text-default);
   }
 }
 

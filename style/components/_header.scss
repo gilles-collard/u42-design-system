@@ -2,14 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  height: var(--header-height);
   backdrop-filter: blur(var(--blur-400));
 }
 
-.header__inner {
-  display: flex;
-  align-items: center;
-  margin-inline: auto;
-}
 
 .header__logo {
   display: flex;

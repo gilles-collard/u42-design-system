@@ -8,15 +8,15 @@
   gap: var(--space-05);
   transition: var(--transition);
 
-  &:hover { border-color: var(--border-base); }
+  &:hover { border-color: var(--border-default); }
 }
 
 .card__title {
-  font-family: var(--font-medium);
+  font-family: var(--font-sans);
   font-size: var(--smallest);
   margin: 0;
   line-height: 1.3;
-  color: var(--text-base);
+  color: var(--text-default);
 }
 
 .card__desc {

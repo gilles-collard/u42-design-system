@@ -1,31 +1,34 @@
+// u42 Design System — Data / Meta
 .meta_data {
   margin-top: var(--space-4);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding-top: var(--space-2);
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-default);
 }
 
 .meta_data__item {
   gap: var(--space-05);
-  font-family: var(--font-base);
+  font-family: var(--font-sans);
   font-size: var(--smaller);
-  color: var(--gray-180);
+  color: var(--text-subtle);
+
   .key {
-    font-family: var(--family-mono);
+    font-family: var(--font-mono);
     font-size: var(--smallest);
-    color: var(--color-faint);
-    letter-spacing: 0.08em;
+    color: var(--text-faint);
+    letter-spacing: var(--tracking-wider);
     text-transform: uppercase;
     margin-bottom: 6px;
   }
+
   .value {
     font-size: var(--smaller);
-    color: var(--text);
+    color: var(--text-default);
   }
 }
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .hero-meta {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -7,68 +7,68 @@
 @use "sass:map";
 
 $breakpoints: (
-  "mobile":     375px,
-  "tablet":     768px,
-  "laptop":     1024px,
-  "desktop":    1200px,
+  "mobile": 375px,
+  "tablet": 768px,
+  "laptop": 1024px,
+  "desktop": 1200px,
   "ultra_wide": 1600px,
 );
 
 :root {
   // typography
-  --hero:     clamp(3rem, 5vw + 1rem, 6rem);
-  --h1:       clamp(2.75rem, 5vw + 1rem, 4.5rem);
-  --h2:       clamp(1.875rem, 2.3vw + 1rem, 2.75rem);
-  --h3:       clamp(1.75rem, 2vw + 1rem, 2.375rem);
-  --h4:       1.5rem;
-  --h5:       1.375rem;
-  --h6:       1.275rem;
-  --p:        clamp(1.5rem, 1vw + 1rem, 2rem);
-  --small:    clamp(1.25rem, 0.7vw + 1rem, 1.5rem);
-  --smaller:  clamp(1.125rem, 0.35vw + 1rem, 1.25rem);
+  --hero: clamp(3rem, 5vw + 1rem, 6rem);
+  --h1: clamp(2.75rem, 5vw + 1rem, 4.5rem);
+  --h2: clamp(1.875rem, 2.3vw + 1rem, 2.75rem);
+  --h3: clamp(1.75rem, 2vw + 1rem, 2.375rem);
+  --h4: 1.5rem;
+  --h5: 1.375rem;
+  --h6: 1.275rem;
+  --p: clamp(1.5rem, 1vw + 1rem, 2rem);
+  --small: clamp(1.25rem, 0.7vw + 1rem, 1.5rem);
+  --smaller: clamp(1.125rem, 0.35vw + 1rem, 1.25rem);
   --smallest: clamp(1rem, 0.125vw + 1rem, 1.125rem);
-  --nano:     14px;
+  --nano: 14px;
 
   // font families
-  --font-sans:  "Inter", system-ui, sans-serif;
-  --font-serif: "Libre Baskerville", Georgia, serif;
-  --font-mono:  "Source Code Pro", ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   // font weights
-  --weight-thin:        100;
+  --weight-thin: 100;
   --weight-extra-light: 200;
-  --weight-light:       300;
-  --weight-regular:     400;
-  --weight-medium:      500;
-  --weight-semibold:    600;
-  --weight-bold:        700;
-  --weight-extra-bold:  800;
-  --weight-black:       900;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extra-bold: 800;
+  --weight-black: 900;
 
   // line heights
-  --leading-tight: 1.2;
-  --leading-snug:  1.35;
-  --leading-base:  1.5;
-  --leading-loose: 1.75;
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-base: 1.4;
+  --leading-loose: 1.6;
 
   // letter spacing
-  --tracking-tight:  -0.02em;
-  --tracking-base:    0em;
-  --tracking-wide:    0.04em;
-  --tracking-wider:   0.08em;
-  --tracking-widest:  0.12em;
+  --tracking-tight: -0.02em;
+  --tracking-base: 0em;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+  --tracking-widest: 0.12em;
 
   // spacing — base 8px rem
   --space-05: 0.5rem;
-  --space-1:  1rem;
-  --space-2:  2rem;
-  --space-3:  3rem;
-  --space-4:  4rem;
-  --space-5:  5rem;
-  --space-6:  6rem;
-  --space-7:  7rem;
-  --space-8:  8rem;
-  --space-9:  9rem;
+  --space-1: 1rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+  --space-4: 4rem;
+  --space-5: 5rem;
+  --space-6: 6rem;
+  --space-7: 7rem;
+  --space-8: 8rem;
+  --space-9: 9rem;
   --space-10: 10rem;
   --space-11: 11rem;
   --space-12: 12rem;
@@ -78,9 +78,9 @@ $breakpoints: (
   --space-16: 16rem;
 
   // border radius — Figma Radius/*
-  --radius-100:  2px;
-  --radius-200:  4px;
-  --radius-400:  8px;
+  --radius-100: 2px;
+  --radius-200: 4px;
+  --radius-400: 8px;
   --radius-full: 9999px;
 
   // blur — Figma Blur/*
@@ -90,23 +90,23 @@ $breakpoints: (
   --blur-400: 42px;
 
   // motion
-  --duration-fast:  174ms;
-  --duration-base:  285ms;
-  --duration-slow:  369ms;
+  --duration-fast: 174ms;
+  --duration-base: 285ms;
+  --duration-slow: 369ms;
   --easing-default: cubic-bezier(0.4, 0, 0.6, 1);
-  --easing-spring:  cubic-bezier(0.4, 1.6, 0.6, 1);
-  --transition:     all var(--duration-base) var(--easing-default);
+  --easing-spring: cubic-bezier(0.4, 1.6, 0.6, 1);
+  --transition: all var(--duration-base) var(--easing-default);
 
   // z-index
-  --z-base:    0;
-  --z-raised:  10;
-  --z-30:      30;
+  --z-base: 0;
+  --z-raised: 10;
+  --z-30: 30;
   --z-overlay: 100;
-  --z-modal:   1000;
-  --z-toast:   10000;
+  --z-modal: 1000;
+  --z-toast: 10000;
 
   // layout
-  --header-height: 4rem;
+  --header-height: 5rem;
 
   // icon sizes — Figma Icon/*
   --icon-sm: 24px;
@@ -114,29 +114,29 @@ $breakpoints: (
   --icon-lg: 40px;
 
   // gray solid
-  --gray-0:    #ffffff;
-  --gray-40:   #f5f5f5;
-  --gray-70:   #ededed;
-  --gray-100:  #e6e6e6;
-  --gray-190:  #cfcfcf;
-  --gray-280:  #b8b8b8;
-  --gray-370:  #a1a1a1;
-  --gray-380:  #a19b9d;
-  --gray-460:  #8a8a8a;
-  --gray-550:  #737373;
-  --gray-620:  #6e6869;
-  --gray-630:  #5c5c5c;
-  --gray-720:  #454545;
-  --gray-810:  #2e2e2e;
-  --gray-880:  #1e1e1e;
-  --gray-910:  #171717;
-  --gray-940:  #0f0f0f;
-  --gray-970:  #080808;
+  --gray-0: #ffffff;
+  --gray-40: #f5f5f5;
+  --gray-70: #ededed;
+  --gray-100: #e6e6e6;
+  --gray-190: #cfcfcf;
+  --gray-280: #b8b8b8;
+  --gray-370: #a1a1a1;
+  --gray-380: #a19b9d;
+  --gray-460: #8a8a8a;
+  --gray-550: #737373;
+  --gray-620: #6e6869;
+  --gray-630: #5c5c5c;
+  --gray-720: #454545;
+  --gray-810: #2e2e2e;
+  --gray-880: #1e1e1e;
+  --gray-910: #171717;
+  --gray-940: #0f0f0f;
+  --gray-970: #080808;
   --gray-1000: #000000;
 
   // brand — alias of gray
-  --brand-40:  #f5f5f5;
-  --brand-70:  #ededed;
+  --brand-40: #f5f5f5;
+  --brand-70: #ededed;
   --brand-100: #e6e6e6;
   --brand-190: #cfcfcf;
   --brand-280: #b8b8b8;
@@ -148,99 +148,105 @@ $breakpoints: (
   --brand-970: #080808;
 
   // white alpha
-  --white-100:  rgba(255, 255, 255, 0.05);
-  --white-200:  rgba(255, 255, 255, 0.10);
-  --white-300:  rgba(255, 255, 255, 0.20);
-  --white-400:  rgba(255, 255, 255, 0.40);
-  --white-500:  rgba(255, 255, 255, 0.70);
-  --white-600:  rgba(255, 255, 255, 0.80);
-  --white-700:  rgba(255, 255, 255, 0.85);
-  --white-800:  rgba(255, 255, 255, 0.90);
-  --white-900:  rgba(255, 255, 255, 0.95);
+  --white-50: rgba(255, 255, 255, 0.03);
+  --white-100: rgba(255, 255, 255, 0.05);
+  --white-150: rgba(255, 255, 255, 0.06);
+
+  // overlay
+  --overlay-default: rgb(123 123 123 / 7%);
+  --overlay-hover: rgb(123 123 123 / 15%);
+  --white-200: rgba(255, 255, 255, 0.1);
+  --white-300: rgba(255, 255, 255, 0.2);
+  --white-400: rgba(255, 255, 255, 0.4);
+  --white-500: rgba(255, 255, 255, 0.7);
+  --white-600: rgba(255, 255, 255, 0.8);
+  --white-700: rgba(255, 255, 255, 0.85);
+  --white-800: rgba(255, 255, 255, 0.9);
+  --white-900: rgba(255, 255, 255, 0.95);
   --white-1000: #ffffff;
 
   // black alpha — base #0c0c0d
-  --black-100:  rgba(12, 12, 13, 0.05);
-  --black-200:  rgba(12, 12, 13, 0.10);
-  --black-300:  rgba(12, 12, 13, 0.20);
-  --black-400:  rgba(12, 12, 13, 0.40);
-  --black-500:  rgba(12, 12, 13, 0.70);
-  --black-600:  rgba(12, 12, 13, 0.80);
-  --black-700:  rgba(12, 12, 13, 0.85);
-  --black-800:  rgba(12, 12, 13, 0.90);
-  --black-900:  rgba(12, 12, 13, 0.95);
+  --black-100: rgba(12, 12, 13, 0.05);
+  --black-200: rgba(12, 12, 13, 0.1);
+  --black-300: rgba(12, 12, 13, 0.2);
+  --black-400: rgba(12, 12, 13, 0.4);
+  --black-500: rgba(12, 12, 13, 0.7);
+  --black-600: rgba(12, 12, 13, 0.8);
+  --black-700: rgba(12, 12, 13, 0.85);
+  --black-800: rgba(12, 12, 13, 0.9);
+  --black-900: rgba(12, 12, 13, 0.95);
   --black-1000: #0c0c0d;
 
   // green
-  --green-100:  #ebffee;
-  --green-200:  #cff7d3;
-  --green-300:  #aff4c6;
-  --green-400:  #85e0a3;
-  --green-500:  #14ae5c;
-  --green-600:  #009951;
-  --green-700:  #008043;
-  --green-800:  #02542d;
-  --green-900:  #012d18;
+  --green-100: #ebffee;
+  --green-200: #cff7d3;
+  --green-300: #aff4c6;
+  --green-400: #85e0a3;
+  --green-500: #14ae5c;
+  --green-600: #009951;
+  --green-700: #008043;
+  --green-800: #02542d;
+  --green-900: #012d18;
   --green-1000: #041b10;
 
   // pink
-  --pink-100:  #fcf1fd;
-  --pink-200:  #fae1fa;
-  --pink-300:  #f5c0ef;
-  --pink-400:  #f19edc;
-  --pink-500:  #ea3fb8;
-  --pink-600:  #d732a8;
-  --pink-700:  #ba2a92;
-  --pink-800:  #8a226f;
-  --pink-900:  #57184a;
+  --pink-100: #fcf1fd;
+  --pink-200: #fae1fa;
+  --pink-300: #f5c0ef;
+  --pink-400: #f19edc;
+  --pink-500: #ea3fb8;
+  --pink-600: #d732a8;
+  --pink-700: #ba2a92;
+  --pink-800: #8a226f;
+  --pink-900: #57184a;
   --pink-1000: #3f1536;
 
   // red
-  --red-100:  #fee9e7;
-  --red-200:  #fdd3d0;
-  --red-300:  #fcb3ad;
-  --red-400:  #f4776a;
-  --red-500:  #ec221f;
-  --red-600:  #c00f0c;
-  --red-700:  #900b09;
-  --red-800:  #690807;
-  --red-900:  #4d0b0a;
+  --red-100: #fee9e7;
+  --red-200: #fdd3d0;
+  --red-300: #fcb3ad;
+  --red-400: #f4776a;
+  --red-500: #ec221f;
+  --red-600: #c00f0c;
+  --red-700: #900b09;
+  --red-800: #690807;
+  --red-900: #4d0b0a;
   --red-1000: #300603;
 
   // slate
-  --slate-100:  #f2f2f2;
-  --slate-200:  #e4e4e4;
-  --slate-300:  #cdcdcd;
-  --slate-400:  #b2b2b2;
-  --slate-500:  #949494;
-  --slate-600:  #767676;
-  --slate-700:  #5a5a5a;
-  --slate-800:  #434343;
-  --slate-900:  #303030;
+  --slate-100: #f2f2f2;
+  --slate-200: #e4e4e4;
+  --slate-300: #cdcdcd;
+  --slate-400: #b2b2b2;
+  --slate-500: #949494;
+  --slate-600: #767676;
+  --slate-700: #5a5a5a;
+  --slate-800: #434343;
+  --slate-900: #303030;
   --slate-1000: #242424;
 
   // yellow
-  --yellow-100:  #fffbeb;
-  --yellow-200:  #fff1c2;
-  --yellow-300:  #ffe8a3;
-  --yellow-400:  #e8b931;
-  --yellow-500:  #e6a000;
-  --yellow-600:  #bf6a02;
-  --yellow-700:  #985102;
-  --yellow-800:  #682d03;
-  --yellow-900:  #522504;
+  --yellow-100: #fffbeb;
+  --yellow-200: #fff1c2;
+  --yellow-300: #ffe8a3;
+  --yellow-400: #e8b931;
+  --yellow-500: #e6a000;
+  --yellow-600: #bf6a02;
+  --yellow-700: #985102;
+  --yellow-800: #682d03;
+  --yellow-900: #522504;
   --yellow-1000: #401b01;
 
   // blue
-  --blue-100:  #f1f6fd;
-  --blue-200:  #e1ebfa;
-  --blue-300:  #c0d4f5;
-  --blue-400:  #9ebef1;
-  --blue-500:  #3f81ea;
-  --blue-600:  #3271d7;
-  --blue-700:  #2a61ba;
-  --blue-800:  #224a8a;
-  --blue-900:  #183057;
+  --blue-100: #f1f6fd;
+  --blue-200: #e1ebfa;
+  --blue-300: #c0d4f5;
+  --blue-400: #9ebef1;
+  --blue-500: #3f81ea;
+  --blue-600: #3271d7;
+  --blue-700: #2a61ba;
+  --blue-800: #224a8a;
+  --blue-900: #183057;
   --blue-1000: #15253f;
 }
 
