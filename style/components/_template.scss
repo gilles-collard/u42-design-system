@@ -31,11 +31,6 @@ body {
   margin: 0;
 }
 
-footer {
-  padding: 3rem;
-  text-align: center;
-  font-size: 3rem;
-}
 
 // debug
 // * {
@@ -175,6 +170,8 @@ footer {
 .flex_row {
   display: flex;
   flex-direction: row;
+
+
 }
 
 .flex_column {
@@ -201,7 +198,12 @@ footer {
   opacity: 0.69;
 }
 
-/* VISIBILITY */
+// MOBILE
+  @media (max-width: 640px) {
+    .flex_col--mobile {flex-direction: column;}
+  }
+
+  /* VISIBILITY */
 
 // .hidden_desktop {
 //   @include desktop {

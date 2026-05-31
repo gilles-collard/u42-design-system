@@ -26,10 +26,12 @@ $spacers: (
     padding: #{$v};
   }
   .px_#{$n} {
-    padding: 0 #{$v};
+    padding-right: #{$v};
+    padding-left: #{$v};
   }
   .py_#{$n} {
-    padding: #{$v} 0;
+    padding-top: #{$v};
+    padding-bottom: #{$v};
   }
   .pt_#{$n} {
     padding-top: #{$v};
@@ -48,10 +50,12 @@ $spacers: (
     margin: #{$v};
   }
   .mx_#{$n} {
-    margin: 0 #{$v};
+    margin-left: #{$v};
+    margin-right: #{$v};
   }
   .my_#{$n} {
-    margin: #{$v} 0;
+    margin-top: #{$v};
+    margin-bottom: #{$v};
   }
   .mt_#{$n} {
     margin-top: #{$v};
