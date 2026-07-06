@@ -48,6 +48,20 @@
   font-size: var(--small);
 }
 
+.btn_sm {
+  padding: 2px var(--space-05);
+  font-size: var(--nano);
+}
+
+.btn_danger {
+  background: var(--bg-danger);
+  color: var(--text-on-brand);
+
+  &:hover {
+    background: color-mix(in srgb, var(--bg-danger) 85%, var(--bg-default));
+  }
+}
+
 // Filled blue button
 .btn_info {
   background: var(--blue-600);
@@ -60,6 +74,22 @@
 
 // Ghost = default .btn (transparent, text only)
 .btn_ghost {}
+
+// Outline = bordered, square corners (list-page "+ New" actions)
+.btn_outline {
+  border: 1px solid var(--border-default);
+  border-radius: 0;
+  padding: var(--space-05) 1.25rem;
+  background: transparent;
+  color: var(--text-default);
+  font-size: .85rem;
+  font-weight: var(--weight-semibold);
+
+  &:hover {
+    border-color: var(--border-neutral);
+    background: transparent;
+  }
+}
 
 // Blue text modifier
 .btn_blue {

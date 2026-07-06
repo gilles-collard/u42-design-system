@@ -1,0 +1,95 @@
+// ============================================================
+// List page - template for module entity list views
+// (mind maps, card sorting tests, mental models, questionnaires…)
+// ============================================================
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4.5rem var(--space-1) 2rem;
+}
+
+.page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.page__header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-default);
+}
+
+.page__empty {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-subtle);
+}
+
+.page__empty p {
+  margin-bottom: 1rem;
+}
+
+.entity_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.entity_card {
+  display: block;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--border-default);
+  text-decoration: none;
+  transition: border-color .12s, background .12s;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    border-color: var(--border-neutral);
+    background: var(--bg-overlay);
+  }
+}
+
+.entity_card__title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-default);
+  margin-bottom: .4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.entity_card__meta {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  font-size: .875rem;
+  color: var(--text-subtle);
+  flex-wrap: wrap;
+}
+
+// Status badge, absolutely positioned in the top-right corner of an entity_card
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  padding: 2px 8px;
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid var(--border-default);
+}
+.badge--draft     { color: var(--text-subtle); }
+.badge--ready,
+.badge--published { color: var(--text-positive); border-color: currentColor; }
+.badge--closed    { color: var(--text-faint); }

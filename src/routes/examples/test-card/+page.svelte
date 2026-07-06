@@ -7,7 +7,7 @@
     <div class="cards-grid">
       <div class="test-card">
         <div class="test-card__head">
-          <span class="test-card__name">Card sorting — Homepage</span>
+          <span class="test-card__name">Card sorting - Homepage</span>
           <span class="tag tag--positive">Published</span>
         </div>
         <p class="test-card__desc">Understand how participants organize the main navigation into mental groups.</p>
@@ -27,7 +27,7 @@
 
       <div class="test-card">
         <div class="test-card__head">
-          <span class="test-card__name">Mental model — Onboarding</span>
+          <span class="test-card__name">Mental model - Onboarding</span>
           <span class="tag tag--warning">Draft</span>
         </div>
         <p class="test-card__desc">Map user needs during the first 30 days against the current onboarding flow.</p>

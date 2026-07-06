@@ -1,5 +1,5 @@
 // =============================================================================
-// u42 Design System — Tokens
+// u42 Design System - Tokens
 // Source of truth: Figma https://www.figma.com/design/fHev06Fqr0ucJZG2KSSLhM
 // Collections: _color_primitives · _typography_primitives · _size_primitives
 // =============================================================================
@@ -58,7 +58,7 @@ $breakpoints: (
   --tracking-wider: 0.08em;
   --tracking-widest: 0.12em;
 
-  // spacing — base 8px rem
+  // spacing - base 8px rem
   --space-05: 0.5rem;
   --space-1: 1rem;
   --space-2: 2rem;
@@ -77,13 +77,13 @@ $breakpoints: (
   --space-15: 15rem;
   --space-16: 16rem;
 
-  // border radius — Figma Radius/*
+  // border radius - Figma Radius/*
   --radius-100: 2px;
   --radius-200: 4px;
   --radius-400: 8px;
   --radius-full: 9999px;
 
-  // blur — Figma Blur/*
+  // blur - Figma Blur/*
   --blur-100: 10px;
   --blur-200: 20px;
   --blur-300: 30px;
@@ -108,7 +108,7 @@ $breakpoints: (
   // layout
   --header-height: 5rem;
 
-  // icon sizes — Figma Icon/*
+  // icon sizes - Figma Icon/*
   --icon-sm: 24px;
   --icon-md: 32px;
   --icon-lg: 40px;
@@ -134,7 +134,7 @@ $breakpoints: (
   --gray-970: #080808;
   --gray-1000: #000000;
 
-  // brand — alias of gray
+  // brand - alias of gray
   --brand-40: #f5f5f5;
   --brand-70: #ededed;
   --brand-100: #e6e6e6;
@@ -165,7 +165,7 @@ $breakpoints: (
   --white-900: rgba(255, 255, 255, 0.95);
   --white-1000: #ffffff;
 
-  // black alpha — base #0c0c0d
+  // black alpha - base #0c0c0d
   --black-100: rgba(12, 12, 13, 0.05);
   --black-200: rgba(12, 12, 13, 0.1);
   --black-300: rgba(12, 12, 13, 0.2);
@@ -250,7 +250,7 @@ $breakpoints: (
   --blue-1000: #15253f;
 }
 
-// reduced motion — outside :root to avoid SCSS nesting issues
+// reduced motion - outside :root to avoid SCSS nesting issues
 @media (prefers-reduced-motion: reduce) {
   :root {
     --duration-fast: 0ms;

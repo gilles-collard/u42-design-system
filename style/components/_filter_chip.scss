@@ -1,0 +1,46 @@
+// ============================================================
+// Filter chip - pill used both as an interactive filter toggle
+// (module filters, "All" / mind maps / card sorting…) and as a
+// static status indicator (draft / published / closed…), driven
+// by --mod-color. Merges the former .tag and .filter-chip.
+// ============================================================
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background: none;
+  color: var(--text-subtle);
+  font: inherit;
+  font-size: var(--nano);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.filter-chip:hover {
+  color: var(--text-default);
+  background: color-mix(in srgb, var(--mod-color, var(--text-subtle)) 18%, transparent);
+}
+
+.filter-chip .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mod-color, var(--text-subtle));
+}
+
+.filter-chip .count {
+  color: var(--text-faint);
+}
+
+// Selected filter, or a static/always-on status pill
+.filter-chip--active {
+  color: var(--text-default);
+  background: color-mix(in srgb, var(--mod-color, var(--text-subtle)) 18%, transparent);
+}

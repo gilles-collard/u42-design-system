@@ -7,7 +7,7 @@
     #{$size} #{$size} 0 $stroke-color;
 }
 
-// Mixins partagés. Aucune valeur hardcodée — uniquement des références tokens.
+// Mixins partagés. Aucune valeur hardcodée - uniquement des références tokens.
 
 @mixin focus-ring {
   outline: 2px solid var(--bg-brand);

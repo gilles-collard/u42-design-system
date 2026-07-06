@@ -16,7 +16,7 @@ Et avec les options utiles (minification par exemple) :
 sass --watch src/scss -o dist/css --output-style compressed
 ```
 
-Si tu utilises une version récente de l’écosystème, sache que **node-sass est déprécié** — on utilise plutôt `sass` (Dart Sass) :
+Si tu utilises une version récente de l’écosystème, sache que **node-sass est déprécié** - on utilise plutôt `sass` (Dart Sass) :
 
 ```bash
 sass --watch src/scss:dist/css

@@ -125,7 +125,7 @@
   --smallest: clamp(1rem, 0.125vw + 1rem, 1.125rem);
   --nano: 14px;
   /* ============================================================
-   * PRIMITIVES — spacing (base 8px → 0.5rem)
+   * PRIMITIVES - spacing (base 8px → 0.5rem)
    * ============================================================ */
   --space-05: 0.5rem; /*  8px */
   --space-1: 1rem; /* 16px */
@@ -182,7 +182,7 @@
   --family-sans: "Suisse Intl", system-ui, sans-serif;
   --family-serif: "Noto Serif";
   --family-mono: "JetBrains Mono Regular", monospace;
-  /* — font weights ——————————————————————————————————————————— */
+  /* -- font weights ------------------------------------------------------ */
   --weight-thin: 100;
   --weight-extra-light: 200;
   --weight-light: 300;
@@ -192,18 +192,18 @@
   --weight-bold: 700;
   --weight-extra-bold: 800;
   --weight-black: 900;
-  /* — line heights ——————————————————————————————————————————— */
+  /* -- line heights ------------------------------------------------------ */
   --leading-tight: 1.2;
   --leading-snug: 1.35;
   --leading-base: 1.5;
   --leading-loose: 1.75;
-  /* — letter spacing ————————————————————————————————————————— */
+  /* -- letter spacing ----------------------------------------------------- */
   --tracking-tight: -0.02em;
   --tracking-base: 0em;
   --tracking-wide: 0.04em;
   --tracking-wider: 0.08em;
   --tracking-widest: 0.12em;
-  /* — boder ————————————————————————————————————————— */
+  /* -- border -------------------------------------------------------------- */
   --border-color: var(--gray-900);
 }
 

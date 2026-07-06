@@ -1,0 +1,96 @@
+// ============================================================
+// Flyout — dropdown menu panel (nav flyouts, kebab menus,
+// account menu, module action menus…)
+// ============================================================
+
+.flyout {
+  position: absolute;
+  left: 0;
+  min-width: 200px;
+  max-width: 280px;
+  padding: 0.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-200);
+  background: var(--bg-neutral);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+}
+
+.flyout--down { top: calc(100% + 8px); left: 0; }
+.flyout--right { left: auto; right: 0; }
+.flyout--wide { min-width: 240px; max-width: 240px; }
+
+.flyout__sep {
+  height: 1px;
+  margin: 0.25rem 0.5rem;
+  background: var(--border-default);
+}
+
+.flyout__item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0 12px;
+  height: 34px;
+  width: 100%;
+  border-radius: var(--radius-200);
+  border: none;
+  background: transparent;
+  color: var(--text-subtle);
+  font-family: var(--font-sans);
+  font-size: var(--nano);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background var(--duration-fast) var(--easing-default),
+    color var(--duration-fast) var(--easing-default);
+}
+
+.flyout__item:hover {
+  background: var(--bg-overlay-hover);
+  color: var(--text-default);
+}
+
+.flyout__item--active {
+  background: var(--bg-overlay);
+  color: var(--text-default);
+}
+
+.flyout__item--danger { color: var(--text-faint); }
+.flyout__item--danger:hover { color: var(--text-default); }
+
+.flyout__item--warn { color: var(--text-warning); }
+.flyout__item--warn:hover { color: var(--text-warning); background: var(--bg-overlay-hover); }
+
+.flyout__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.flyout__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flyout__row {
+  padding: 0.3rem 12px;
+  font-size: var(--nano);
+  color: var(--text-subtle);
+  white-space: nowrap;
+}
+
+.flyout__info {
+  padding: 0.4rem 12px 0.6rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--text-faint);
+  line-height: 1.35;
+}

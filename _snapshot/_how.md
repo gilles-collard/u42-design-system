@@ -1,4 +1,4 @@
-Bonne question — et oui, **utiliser des variables CSS dans un composant React est non seulement une bonne pratique pour un design system, mais souvent une des meilleures options**, _si c’est fait intentionnellement_ (ce qui est plutôt ton cas 👍).
+Bonne question - et oui, **utiliser des variables CSS dans un composant React est non seulement une bonne pratique pour un design system, mais souvent une des meilleures options**, _si c’est fait intentionnellement_ (ce qui est plutôt ton cas 👍).
 
 Je te fais une réponse structurée : **verdict → quand c’est pertinent → arguments techniques → limites → sources**.
 
@@ -223,11 +223,11 @@ Trop de variables exposées = composant difficile à comprendre.
 
 ### Articles & pratiques reconnues
 
-- Adam Argyle (Google Chrome) — _CSS Variables are Design Tokens_
+- Adam Argyle (Google Chrome) - _CSS Variables are Design Tokens_
 
 - [https://web.dev/design-system-tokens/](https://web.dev/design-system-tokens/)
 
-- Josh Comeau — _CSS Variables for React Devs_
+- Josh Comeau - _CSS Variables for React Devs_
 
 - [https://www.joshwcomeau.com/css/css-variables-for-react-devs/](https://www.joshwcomeau.com/css/css-variables-for-react-devs/)
 
