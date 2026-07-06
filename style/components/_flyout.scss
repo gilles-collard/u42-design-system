@@ -21,6 +21,7 @@
 }
 
 .flyout--down { top: calc(100% + 8px); left: 0; }
+.flyout--up { top: auto; bottom: calc(100% + 8px); left: 0; }
 .flyout--right { left: auto; right: 0; }
 .flyout--wide { min-width: 240px; max-width: 240px; }
 
