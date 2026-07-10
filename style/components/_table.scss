@@ -25,7 +25,7 @@ th {
     padding 0.15s ease-in;
 
   &:hover:not(.table__row--disabled) {
-    background: var(--bg-default-hover);
+    background: linear-gradient(to right, transparent, var(--bg-default-hover), transparent);
     padding-inline: 0.75rem;
     border-radius: var(--radius-200);
 
