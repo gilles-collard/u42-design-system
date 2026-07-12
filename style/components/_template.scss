@@ -144,7 +144,7 @@ body {
 // Colonne de contenu centrée, largeur fixe, utilisée pour aligner un header,
 // une nav et le contenu d'une même page (formulaires, listes, boards).
 
-.col_1200 { max-width: 992px; width: 100%; margin-inline: auto; }
+.col_content { max-width: 992px; width: 100%; margin-inline: auto; }
 
 // ─── Auto grid ───────────────────────────────────────────────────────────────
 // Grille à n colonnes égales, fluide, wrapping piloté par --col-min.

@@ -1,4 +1,4 @@
-@use "tokens" as *;
+@use "../variables/tokens" as *;
 @use "responsive" as *;
 
 label {
@@ -149,4 +149,48 @@ output {
   .input {
     width: 100%;
   }
+}
+
+/* ===   ===   ===   ===   ===   === */
+// Field - label + input/textarea/select, used across app forms
+// (project/interview/module editors). One definition, not re-styled per page.
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-05);
+}
+
+.field_label {
+  font-size: var(--nano);
+  font-weight: var(--weight-semibold);
+  color: var(--text-default);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field textarea,
+.field select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border-neutral);
+  border-radius: var(--radius-200);
+  font-family: var(--font-sans);
+  font-size: var(--nano);
+  line-height: var(--leading-loose);
+  color: var(--text-default);
+  background: var(--bg-neutral);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 3rem;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: 2px solid var(--border-brand);
+  border-color: transparent;
 }

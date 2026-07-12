@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "tokens" as *;
+@use "../variables/tokens" as *;
 
 $mobile: map.get($breakpoints, "mobile");
 $tablet: map.get($breakpoints, "tablet");
